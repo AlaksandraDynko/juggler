@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    position: relative;
+    width: 334px;
+    height: 366px;
+    background: white;
+}
+
+.juggler-head {
+    position: absolute;
+    width: 55px;
+    height: 69px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    left: 135px;
+    top: 64px;
+}
+
+.juggler-body {
+    position: absolute;
+    width: 100px;
+    height: 124px;
+    background: white;
+    border: 2px solid black;
+    transform: perspective(450px) rotateX(-45deg) scale(1.0, 1.3);
+    left: 110px;
+    top: 156px;
+}
+
+.juggler-shoulder {
+    position: absolute;
+    width: 2px;
+    height: 114px;
+    background: black;
+}
+
+.juggler-forearm {
+    position: absolute;
+    width: 48px;
+    height: 2px;
+    background: black;
+}
+
+.shoulder1 {
+    left: -2px;
+    top: 0px;
+    transform-origin: top;
+    animation: shoulder-motion 0.5s infinite alternate;
+}
+
+@keyframes shoulder-motion {
+    from {
+        transform: rotate(10deg);
+    }
+    to {
+        transform: rotate(-10deg);
+    }
+}
+
+.forearm1 {
+    left: 1px;
+    top: 111px;
+    transform-origin: left;
+    animation: forearm1-rotation 1s infinite linear;
+}
+
+@keyframes forearm1-rotation {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.shoulder2 {
+    left: 100px;
+    top: 0px;
+    transform-origin: top;
+    animation: shoulder-motion 0.5s infinite alternate;
+}
+
+.forearm2 {
+    left: 1px;
+    top: 111px;
+    transform-origin: left;
+    animation: forearm2-rotation 1s infinite linear;
+}
+
+@keyframes forearm2-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.ball {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: red;
+    border-radius: 50%;
+}
+
+.ball1-1 {
+    position: absolute;
+    left: 145px;
+    top: 236px;
+    animation: ball-animation 2s infinite linear;
+}
+
+.ball1-2 {
+    position: absolute;
+    left: 145px;
+    top: 236px;
+    animation: ball-animation 2s -1s infinite linear;
+}
+
+.ball2-1 {
+    position: absolute;
+    left: 238px;
+    top: 236px;
+    animation: ball-animation 2s infinite linear;
+    animation-direction: reverse;
+}
+
+.ball2-2 {
+    position: absolute;
+    left: 238px;
+    top: 236px;
+    animation: ball-animation 2s -1s infinite linear;
+    animation-direction: reverse;
+}
+
+@keyframes ball-animation {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    12.5% {
+        transform: translate(-28px, -108px);
+    }
+    25% {
+        transform: translate(-39px, -174px);
+    }
+    37.5% {
+        transform: translate(-60px, -213px);
+    }
+    50% {
+        transform: translate(-88px, -155px);
+    }
+    62.5% {
+        transform: translate(-99px, -63px);
+    }
+    75% {
+        transform: translate(-73px, 4px);
+    }
+    87.5% {
+        transform: translate(-35px, 59px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
